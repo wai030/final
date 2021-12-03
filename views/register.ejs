@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+    <body>
+        <header>
+            <h2>Register</h2>
+        </header>
+        <section class="registerForm">
+            <form action="/register" method="POST">
+                <fieldset>
+                    <% if (locals.message) { %>
+                        <div class="registerFlash">
+                            <%= message %>
+                        </div>
+                    <% } %>
+                    <br>
+                    <div class="username">
+                        <label for="username">Username</label>
+                        <br>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <br>
+                    <div class="email">
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <br>
+                    <div class="password">
+                        <label for="password">Password</label>
+                        <br>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <br>
+                    <div class="r_password">
+                        <label for="r_password">Repeat password</label>
+                        <br>
+                        <input type="password" id="r_password" name="r_password" required>
+                    </div>
+                    <p><button type="submit">Create profile</button> or already have a profile? <a href="/login">Log in</a></p>
+                </fieldset>
+            </form>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<nav class="header">
+    <!-- The title comes with icon -->
+    <h1 class="webTitle">Final Assignment</h1>
+    <nav class="headerNav">
+        <ul>
+            <li><a href="../ideas">Ideas</a></li>
+            <strong><li><a href="../ideas/create">Eureka! (Start your Idea!)</a></li></strong>
+            <li class="searchBar">
+                <!-- when submit value through get -> req.query -->
+                <form action="/search" method="GET" >
+                    <% if (locals.searchOptions) { %> 
+                        <!-- TODO: adjust the input box size -->
+                        <input type="text" name="search" value="<%= searchOptions %>" size="18">
+                    <% } else { %>
+                        <input type="text" name="search" placeholder="Search for courses">
+                    <% } %>
+                    <button type="submit">&#128269;</button>
+                </form>
+            </li>
+            <li>
+                Username
+            </li>
+            <div class="logoutBtn">
+                <form action="/logout?_method=DELETE" method="POST">
+                    <button type="submit">Log out</button>
+                </form>
+            </div>
+        </ul>
+    </nav>
+</nav>
